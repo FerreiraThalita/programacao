@@ -1,0 +1,39 @@
+<!--  Desenvolva um algoritmo que leia dois números inteiros e mostre o somatório entre eles. -->
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soma</title>
+</head>
+<body>
+    <p>
+    Informe um valor: <input type="text" id="ivalor1">
+    </p>
+    <p>
+        Informe outro valor: <input type="text" id="ivalor2">
+    </p>
+    <p>
+        <input type="button" value="Somar" id="btSomar">
+    </p>
+    <p id="resultado"></p>
+
+    <script>
+        function somar() {
+            let valor1 = document.getElementById("ivalor1");
+            let valor2 = document.getElementById("ivalor2");
+            let resultado = document.getElementById("resultado");
+
+            let n1 = Number(valor1.value);
+            let n2 = Number(valor2.value);
+            let soma = n1 + n2;
+            
+            resultado.textContent = (`A soma entre ${n1} e ${n2} é igual a ${soma}`);
+        }
+        
+        let btSomar = document.getElementById('btSomar');
+        btSomar.addEventListener("click", somar)
+    </script>
+</body>
+</html>

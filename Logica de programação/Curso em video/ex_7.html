@@ -1,0 +1,40 @@
+<!-- Crie um algoritmo que leia um número real e mostre na tela o seu dobro e a sua terça parte. -->
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dobro e terça parte</title>
+</head>
+<body>
+    <h1>
+        Verificando o dobro e a terça parte
+    </h1>
+    <p>
+        Digite um número: <input type="number" id="inumero">
+    </p>
+    <p>
+        <input type="button" value="Verificar" id="btVerificar">
+    </p>
+    <strong>
+        <pre id="resultado"></pre>
+    </strong>
+
+    <script>
+        function verificando() {
+            let inum = document.getElementById("inumero");
+            let result = document.getElementById("resultado");
+
+            let num = Number(inum.value);
+            let dobro = num * 2;
+            let tercaParte = num / 3;
+
+            result.textContent = `O dobro de ${num} é ${dobro} \nA terça parte de ${num} é ${tercaParte.toFixed(4)}`;
+        }
+
+        let btVerificar = document.getElementById("btVerificar");
+        btVerificar.addEventListener("click", verificando);
+    </script>
+</body>
+</html>

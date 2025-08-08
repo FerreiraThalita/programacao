@@ -1,0 +1,36 @@
+<!-- Faça um programa que leia um número inteiro e mostre o seu antecessor e seu sucessor.-->
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Antecessor e Sucessor</title>
+</head>
+<body>
+    <p>
+        Informe um número: <input type="text" id="inum">
+    </p>
+    <p>
+        <input type="button" value="Verificar" id="btVerificar">
+    </p>
+    <strong>
+        <pre id="Resultado"></pre>
+    </strong>
+
+    <script>
+        function antecessorSucessor() {
+            let inum = document.getElementById("inum");
+            let result = document.getElementById("Resultado");
+
+            let num = Number(inum.value);
+            let antecessor = num - 1;
+            let sucessor = num + 1;
+
+            result.textContent = `O antecessor de ${num} é ${antecessor} \nO sucessor de ${num} é ${sucessor}`
+        }
+        let btVerificar = document.getElementById("btVerificar");
+        btVerificar.addEventListener("click", antecessorSucessor);
+    </script>
+</body>
+</html>

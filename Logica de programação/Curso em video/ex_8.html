@@ -1,0 +1,44 @@
+<!-- Desenvolva um programa que leia uma distância em metros e mostre os valores
+relativos em outras medidas. -->
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Distâncias</title>
+</head>
+<body>
+    <h1>
+        Distâncias
+    </h1>
+    <p>
+        Informe uma distância em metros: <input type="text" id="iDistancia">
+    </p>
+    <p>
+        <input type="button" value="Convertendo" id="btConvertendo">
+    </p>
+    <strong>
+        <pre id="resultado"></pre>
+    </strong>
+
+    <script>
+        function convertendoDistancia(params) {
+            let distancia = document.getElementById("iDistancia");
+            let result = document.getElementById("resultado");
+            
+            let metros = Number(distancia.value);
+            let km = metros / 1000;
+            let hm = metros / 100;
+            let dam = metros / 10;
+            let dm = metros * 10;
+            let cm = metros * 100;
+            let mm = metros * 1000;
+
+            result.textContent = `A distância de ${metros}m correnponde a: \n\n${km}Km \t\t ${dm}dm \n${hm}Hm \t\t ${cm.toFixed(1)}cm \n${dam}Dam \t\t ${mm.toFixed(1)}mm`;
+        }
+        let btConvertendo = document.getElementById("btConvertendo");
+        btConvertendo.addEventListener("click", convertendoDistancia);
+    </script>
+</body>
+</html>

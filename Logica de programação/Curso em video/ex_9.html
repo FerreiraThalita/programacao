@@ -1,0 +1,39 @@
+<!--  Faça um algoritmo que leia quanto dinheiro uma pessoa tem na carteira (em R$) e mostre quantos dólares ela pode comprar. Considere US$1,00 = R$3,45. -->
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Convertendo</title>
+</head>
+<body>
+    <h1>
+        Reais em dólares
+    </h1>
+    <p>
+        Valor em R$: <input type="text" id="ivalor">
+    </p>
+    <p>
+        <input type="button" value="Converter" id="btConverter">
+    </p>
+    <strong>
+        <p id="resultado"></p>
+    </strong>
+
+    <script>
+        function convertendo() {
+            let valor = document.getElementById("ivalor");
+            let result = document.getElementById("resultado")
+
+            let reais = Number(valor.value);
+            let dolar = reais / 3.45;
+
+            result.textContent = `O valor R$ ${reais.toFixed(2)} equivale a US$ ${dolar.toFixed(2)}`;
+        }
+
+        let btConverter = document.getElementById("btConverter");
+        btConverter.addEventListener("click", convertendo);
+    </script>
+</body>
+</html>

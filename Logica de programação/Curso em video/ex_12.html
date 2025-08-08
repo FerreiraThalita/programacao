@@ -1,0 +1,40 @@
+<!--  Crie um programa que leia o preço de um produto, calcule e mostre o seu PREÇO PROMOCIONAL, com 5% de desconto. -->
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promoção</title>
+</head>
+<body>
+    <h1>
+        Preço Promocional
+    </h1>
+    <p>
+        Valor do Produto: <input type="text" id="ivalor">
+    </p>
+    <p>
+        <input type="button" value="Verificar Promoção" id="btVerificar">
+    </p>
+    <strong>
+        <pre id="resultado"></pre>
+    </strong>
+
+    <script>
+        function verificarPromocao() {
+            let ivalor = document.getElementById("ivalor");
+            let result = document.getElementById("resultado");
+
+            let valor = Number(ivalor.value);
+            let desconto = valor * 0.05 ;
+            let preco_promocao = valor - desconto;
+
+            result.textContent = `Promoção de 5% \nValor: ${preco_promocao.toFixed(2)}`;
+        }
+
+        let btVerificar = document.getElementById("btVerificar");
+        btVerificar.addEventListener("click", verificarPromocao);
+    </script>
+</body>
+</html>

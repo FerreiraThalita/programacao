@@ -1,0 +1,49 @@
+<!--  Desenvolva uma lógica que leia os valores de A, B e C de uma equação do segundo grau e mostre o valor de Delta. -->
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bascara</title>
+</head>
+<body>
+    <h1>
+        Valor de Delta
+    </h1>
+    <p>
+        Valor de A: <input type="text" id="ivalorA">
+    </p>
+    <p>
+        Valor de B: <input type="text" id="ivalorB">
+    </p>
+    <p>
+        Valor de C: <input type="text" id="ivalorC">
+    </p>
+    <p>
+        <input type="button" value="Calcular" id="btCalcular">
+    </p>
+    <strong>
+        <pre id="resultado"></pre>
+    </strong>
+
+    <script>
+        function valorDelta() {
+            let ivalorA = document.getElementById("ivalorA");
+            let ivalorB = document.getElementById("ivalorB");
+            let ivalorC = document.getElementById("ivalorC");
+            let result = document.getElementById("resultado");
+
+            let valorA = Number(ivalorA.value);
+            let valorB = Number(ivalorB.value);
+            let valorC = Number(ivalorC.value);
+            let delta = valorB ** 2 - 4 * valorA * valorC;
+
+            result.textContent =  `Dados os valores a: ${valorA}, b: ${valorB}, c: ${valorC} \nO valor de Delta é: ${delta}`;
+        }
+
+        let btCalcular = document.getElementById("btCalcular");
+        btCalcular.addEventListener("click", valorDelta);
+    </script>
+</body>
+</html>

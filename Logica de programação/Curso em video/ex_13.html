@@ -1,0 +1,44 @@
+<!-- Faça um algoritmo que leia o salário de um funcionário, calcule e mostre o seu novo salário, com 15% de aumento -->
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>
+        Aumento salarial
+    </h1>
+    <p>
+        Nome do funcionário: <input type="text" id="inome">
+    </p>
+    <p>
+        Salário: <input type="number" id="isalario">
+    </p>
+    <p>
+        <input type="button" value="Verificar Aumento" id="btVerificar">
+    </p>
+    <strong>
+        <pre id="resultado"></pre>
+    </strong>
+
+    <script>
+        function calculandoAumento() {
+            let nome = document.getElementById("inome").value;
+            let isalario = document.getElementById("isalario");
+            let result = document.getElementById("resultado");
+
+            let salario = Number(isalario.value);
+            let aumento = salario * 0.15;
+            let salario_ajustado = salario + aumento;
+
+            result.textContent = `Com o aumento de 15% \nO funcionario (a): ${nome} \nTeve o salário alterado para: ${salario_ajustado.toFixed(2)}`;
+        }
+
+        let btVerificar = document.getElementById("btVerificar");
+        btVerificar.addEventListener("click", calculandoAumento);
+    </script>
+</body>
+</html>

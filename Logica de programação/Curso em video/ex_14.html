@@ -1,0 +1,47 @@
+<!-- A locadora de carros precisa da sua ajuda para cobrar seus serviços. Escreva um programa que pergunte a quantidade de Km percorridos por um carro alugado e a quantidade de dias pelos quais ele foi alugado. Calcule o preço total a pagar, sabendo que o carro custa R$90 por dia e R$0,20 por Km rodado. -->
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Locadora</title>
+</head>
+<body>
+    <h1>
+        Alugue seu carro
+    </h1>
+    <p>
+        Dias alugado: <input type="number" id="idias">
+    </p>
+    <p>
+        Km percorridos: <input type="number" id="ikms">
+    </p>
+    <p>
+        <input type="button" value="Calcular Valor" id="btCalcular">
+    </p>
+    <strong>
+        <pre id="resultado"></pre>
+    </strong>
+
+    <script>
+        function custoCarro() {
+            let idias = document.getElementById("idias");
+            let ikms = document.getElementById("ikms");
+            let result = document.getElementById("resultado");
+
+            let dias = Number(idias.value);
+            let kms = Number(ikms.value);
+
+            let custo_diario = dias * 90;
+            let custo_kms = kms * 0.20;
+            let custo_total = custo_diario + custo_kms;
+
+            result.textContent = `O carro alugado tem um custo: \n\nDiário: ${custo_diario.toFixed(2)} (R$ 90.00 dia) \nKm percorrido: ${custo_kms.toFixed(2)} (R$ 0,20 por km rodado) \n\nTotalizando: ${custo_total.toFixed(2)}`;
+        }
+
+        let btCalcular = document.getElementById("btCalcular");
+        btCalcular.addEventListener("click", custoCarro);
+    </script>
+</body>
+</html>

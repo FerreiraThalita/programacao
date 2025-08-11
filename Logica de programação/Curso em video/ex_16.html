@@ -1,1 +1,50 @@
 <!-- Escreva um programa para calcular a redução do tempo de vida de um fumante. Pergunte a quantidade de cigarros fumados por dias e quantos anos ele já fumou. Considere que um fumante perde 10 min de vida a cada cigarro. Calcule quantos dias de vida um fumante perderá e exiba o total em dias -->
+
+<!-- toLocaleString("pt-br") - para aparecer a pontuação no numero. -->
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tempo de vida</title>
+</head>
+<body>
+    <h1>
+        Redução do tempo de vida de um fumante
+    </h1>
+    <p>
+        Quantidade de cigarros fumados por dia: <input type="number" id="icigarros">
+    </p>
+    <p>
+        Há quantos anos fuma: <input type="number" id="ianos">
+    </p>
+    <p>
+        <input type="button" value="Calcular tempo perdido" id="btCalcular">
+    </p>
+    <strong>
+        <pre id="resultado"></pre>
+    </strong>
+
+    <script>
+        function vidaPerdida() {
+            let icigarros = document.getElementById("icigarros");
+            let ianos = document.getElementById("ianos");
+            let result = document.getElementById("resultado");
+
+            let cigarros = Number(icigarros.value);
+            let anos = Number(ianos.value);
+
+            let cigarros_totais = cigarros * 365 * anos;
+            let tempo_perdido_min = cigarros_totais * 10;
+            let tempo_perdido_dias = tempo_perdido_min / 60 / 24;
+            let tempo_perdido_anos = tempo_perdido_dias / 365;
+
+            result.textContent = `De acordo com os dados informados acima: \n\nForam fumados ${cigarros_totais.toLocaleString("pt-br")} nesses ${anos} anos. \nTotalizando ${tempo_perdido_dias.toFixed(2)} dias = ${tempo_perdido_anos.toFixed(2)} anos perdidos de vida.`;
+        }
+
+        let btCalcular = document.getElementById("btCalcular");
+        btCalcular.addEventListener("click", vidaPerdida);
+    </script>
+</body>
+</html>

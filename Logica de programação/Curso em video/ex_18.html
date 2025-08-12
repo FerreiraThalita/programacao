@@ -1,0 +1,53 @@
+<!-- Faça um programa que leia o ano de nascimento de uma pessoa, calcule a idade dela e depois mostre se ela pode ou não votar.-->
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Votação</title>
+</head>
+<body>
+    <h1>
+        Apto ou Inapto?
+    </h1>
+    <p>
+        Ano atual: <input type="number" id="ianoAtual">
+    </p>
+    <p>
+        Ano de nascimento: <input type="number" id="ianoNas">
+    </p>
+    <p>
+        <input type="button" value="Verificar" id="btVerificar">
+    </p>
+    <strong>
+        <pre id="resultado"></pre>
+    </strong>
+
+    <script>
+        function verificandoIdade() {
+            let ianoAtual = document.getElementById("ianoAtual");
+            let ianoNas = document.getElementById("ianoNas");
+            let result = document.getElementById("resultado");
+
+            let ano_atual = Number(ianoAtual.value);
+            let ano_nas = Number(ianoNas.value);
+            let idade = ano_atual - ano_nas;
+
+            if (idade >= 16 & idade <= 18 || idade >= 70) {
+                result.textContent = `Apto - Votar ou não é escolha sua. \nVocê pode votar se quiser, mas não é obrigatorio.`;
+                result.style.color = "blue";
+            } else if (idade >= 18) {
+                result.textContent = `Apto - Você pode votar, é obrigatório`;
+                result.style.color = "green";
+            } else {
+                result.textContent = "Inapto - Você não pode votar!";
+                result.style.color = "red";
+            }
+        }
+
+        let btVerificar = document.getElementById("btVerificar");
+        btVerificar.addEventListener("click", verificandoIdade);
+    </script>
+</body>
+</html>

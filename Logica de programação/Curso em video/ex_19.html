@@ -1,0 +1,50 @@
+<!-- Crie um algoritmo que leia o nome e as duas notas de um aluno, calcule a sua média e mostre na tela. No final, analise a média e mostre se o aluno teve ou não um bom aproveitamento (se ficou acima da média 7.0). -->
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Média</title>
+</head>
+<body>
+    <h1>
+        Calculando Média
+    </h1>
+    <p>
+        Primeira nota: <input type="text" id="inota1">
+    </p>
+    <p>
+        Segunda nota: <input type="text" id="inota2">
+    </p>
+    <p>
+        <input type="button" value="Calcular Média" id="btCal">
+    </p>
+    <strong>
+        <pre id="Resultado"></pre>
+    </strong>
+
+    <script>
+        function calculandoMedia() {
+            let inota1 = document.getElementById("inota1");
+            let inota2 = document.getElementById("inota2");
+            let result = document.getElementById("Resultado");
+
+            let nota_1 = Number(inota1.value);
+            let nota_2 = Number(inota2.value);
+            let media = (nota_1 + nota_2) / 2;
+
+            if (media >= 7) {
+                result.textContent = `Sua média é ${media} \nAprovado!`;
+                result.style.color = "green";
+            } else {
+                result.textContent = `Sua média é ${media} \nReprovado!`;
+                result.style.color = "red";
+            }
+        }
+        
+        let btCal = document.getElementById("btCal");
+        btCal.addEventListener("click", calculandoMedia);
+    </script>
+</body>
+</html>

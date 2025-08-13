@@ -1,0 +1,67 @@
+<!--  Numa promoção exclusiva para o Dia da Mulher, uma loja quer dar descontos para todos, mas especialmente para mulheres. Faça um programa que leia nome, sexo e o valor das compras do cliente e calcule o preço com desconto. Sabendo que:
+ - Homens ganham 5% de desconto
+ - Mulheres ganham 13% de desconto-->
+
+ <!DOCTYPE html>
+ <html lang="pt-br">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promoção</title>
+ </head>
+ <body>
+    <h1>
+        Dia das Mulheres - Promoção Exclusiva
+    </h1>
+    <p>
+        Nome: <input type="text" name="nome" id="inome">
+    </p>
+    <p>
+        Sexo: <p>
+            Masculino <input type="radio" name="genero" value="masculino">
+            Feminino <input type="radio" name="genero" value="feminino">
+        </p>
+    </p>
+    <p>
+        Valor da Compra: <input type="number" name="valorCom" id="ivalor">
+    </p>
+    <p>
+        <input type="button" value="Verificar Promoção" id="btPromo">
+    </p>
+    <strong>
+        <pre id="resultado"></pre>
+    </strong>
+
+    <script>
+        function promoMulheres() {
+            let nome = document.getElementById("inome").value;
+            let ivalor = document.getElementById("ivalor");
+            let result = document.getElementById("resultado");
+            const selecionado = document.querySelector('input[name="genero"]:checked');
+
+            let valor = Number(ivalor.value);
+            let desconto_f = valor * 0.13;
+            let desconto_h = valor * 0.05;
+            let valor_final = valor;
+
+            if (!selecionado) {
+                document.getElementById('resultado').textContent = "Por favor, selecione um gênero.";
+                return;
+            }
+
+            const genero = selecionado.value;
+
+            if (genero === "feminino") {
+                valor_final = valor - desconto_f;
+                result.textContent = `Com o desconto exclusivo sua compra fica no valor final de R$${valor_final.toFixed(2)}`;
+            } else if (genero === "masculino") {
+                valor_final = valor - desconto_h;
+                result.textContent = `Com o desconto exclusivo sua compra fica no valor final de R$${valor_final.toFixed(2)}`;
+            }
+        }
+
+        let btPromo = document.getElementById("btPromo");
+        btPromo.addEventListener("click", promoMulheres);
+    </script>
+ </body>
+ </html>

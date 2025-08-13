@@ -1,0 +1,52 @@
+<!--  Crie um programa que leia o tamanho de três segmentos de reta. Analise seus comprimentos e diga se é possível formar um triângulo com essas retas. Matematicamente, para três segmentos formarem um triângulo, o comprimento de cada lado deve ser menor que a soma dos outros dois. -->
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Triângulos</title>
+</head>
+<body>
+    <h1>
+        Tipos de triângulos
+    </h1>
+
+    <p>
+        Lado 1: <input type="number" name="lado1" id="ilado1">
+        <br><br>
+        Lado 2: <input type="number" name="lado2" id="ilado2">
+        <br><br>
+        Lado 3: <input type="number" name="lado3" id="ilado3">
+    </p>
+
+    <button type="submit" onclick="analisandoTri()">Analisar</button>
+
+    <pre id="resultado"></pre>
+
+    <script>
+        function analisandoTri() {
+            let ilado1 = document.getElementById("ilado1");
+            let ilado2 = document.getElementById("ilado2");
+            let ilado3 = document.getElementById("ilado3");
+            let result = document.getElementById("resultado");
+
+            let lado_1 = Number(ilado1.value);
+            let lado_2 = Number(ilado2.value);
+            let lado_3 = Number(ilado3.value);
+
+            if (lado_1 > lado_2 + lado_3 || lado_2 > lado_3 + lado_1 || lado_3 > lado_1 + lado_2 ) {
+                alert("Os valores informados não formam um triângulo!");
+                ilado1.focus();
+                return;
+            } else if (lado_1 == lado_2 & lado_2 == lado_3) {
+                result.textContent = "Todos os lados são iguais. \nEntão temos um triangulo: Equilátero";
+            } else if (lado_1 == lado_2 & lado_2 != lado_3 || lado_2 == lado_3 & lado_3 != lado_1 || lado_1 == lado_3 & lado_1 != lado_2) {
+                result.textContent = "Dois dos lados são iguais. \nEntão temos um triangulo: Isósceles";
+            } else {
+                result.textContent = "Todos os lados são diferentes. \nEntão temos um triangulo: Escaleno";
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!-- Faça um algoritmo que pergunte a distância que um passageiro deseja percorrer em Km. Calcule o preço da passagem, cobrando R$0.50 por Km para viagens até 200Km e R$0.45 para viagens mais longas.-->
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Passagem</title>
+</head>
+<body>
+    <h1>
+        Calcule o preço da passagem
+    </h1>
+
+    <p>
+        Qual a Km total da sua viagem? <input type="number" name="km" id="ikm">
+    </p>
+
+    <button type="button" onclick="calcularPassagem()">Calcular</button>
+
+    <pre id="resultado"></pre>
+
+    <script>
+        function calcularPassagem() {
+            let ikm = document.getElementById("ikm");
+            let result = document.getElementById("resultado");
+
+            let km = Number(ikm.value);
+            let passagem = km;
+
+            if (km > 200) {
+                passagem = km * 0.45;
+                result.textContent = `Percorrendo ${km} km totais \nValor da Passagem: ${passagem.toFixed(2)}`;
+            } else {
+                passagem = km * 0.50;
+                result.textContent = `Percorrendo ${km} km totais \nValor da Passagem: ${passagem.toFixed(2)}`;
+            }
+        }
+    </script>
+</body>
+</html>
+
+

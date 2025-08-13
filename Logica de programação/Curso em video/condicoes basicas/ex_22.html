@@ -1,0 +1,56 @@
+<!--  Escreva um programa que leia o ano de nascimento de um rapaz e mostre a sua situação em relação ao alistamento militar.
+ - Se estiver antes dos 18 anos, mostre em quantos anos faltam para o alistamento. 
+ - Se já tiver depois dos 18 anos, mostre quantos anos já se passaram do alistamento.-->
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>
+        Alistamento militar.
+    </h1>
+    <p>
+        Ano atual: <input type="number" id="ianoAtual">
+    </p>
+    <p>
+        Ano de nascimento: <input type="number" id="ianoNas">
+    </p>
+    <p>
+        <input type="button" value="Fazer Verificação" id="btFazer">
+    </p>
+    <strong>
+        <pre id="resultado"></pre>
+    </strong>
+
+    <script>
+        function alistamento() {
+            let ianoAtual = document.getElementById("ianoAtual");
+            let ianoNas = document.getElementById("ianoNas");
+            let result = document.getElementById("resultado");
+
+            let ano_atual = Number(ianoAtual.value);
+            let ano_nas = Number(ianoNas.value);
+            let idade = ano_atual - ano_nas;
+            let tempo_restante = 18 - idade;
+            let tempo_pass = idade - 18;
+
+            if (ano_atual == 0 || ano_nas == 0 || isNaN(ano_atual)) {
+                alert("Informe os dados corretamente!")
+            } else if (idade > 18) {
+                result.textContent = `Já se passaram ${tempo_pass} anos do seu alistamento`;
+            } else if (idade < 18) {
+                result.textContent = `Ainda faltam ${tempo_restante} anos para o seu alistamento`;
+            } else {
+                result.textContent = "Hora de se alistar!";
+            }
+        }
+
+        let btFazer = document.getElementById("btFazer");
+        btFazer.addEventListener("click", alistamento);
+    </script>
+</body>
+</html>

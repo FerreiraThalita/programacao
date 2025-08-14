@@ -7,6 +7,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+<style>
+    pre {
+        font-weight: bolder;
+        font-size: 1.4em;
+    }
+</style>
 <body>
     <h1>
         Empréstimo Bancário
@@ -21,9 +27,7 @@
         Em quantos anos você quer quitar o valor? <input type="number" name="tempo" id="itempo">
     </p>
     <button onclick="calculandoPrestacao()">Verificar aprovação</button>
-    <strong>
-        <pre id="resultado"></pre>
-    </strong>
+    <pre id="resultado"></pre>
 
     <script>
         function calculandoPrestacao() {
@@ -45,10 +49,10 @@
                 ivalor.focus();
                 return;
             } else if (valor_mensal > valor_limite_parcela) {
-                result.textContent = `Infelizmente seu empréstimo foi NEGADO!`;
+                result.textContent = `\nInfelizmente seu empréstimo foi NEGADO!`;
                 result.style.color = "red";
             } else {
-                result.textContent = `Empréstimo APROVADO! \n${quantidade_parcela} parcelas mensais \nValor: R$${valor_mensal.toFixed(2)}`;
+                result.textContent = `\nEmpréstimo APROVADO! \n\n${quantidade_parcela} parcelas mensais \nValor: R$${valor_mensal.toFixed(2)}`;
                 result.style.color = "#08CB00";
             }
 

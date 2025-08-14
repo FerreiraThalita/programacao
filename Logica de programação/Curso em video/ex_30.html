@@ -1,13 +1,16 @@
-<!--  Crie um programa que leia o tamanho de três segmentos de reta. Analise seus comprimentos e diga se é possível formar um triângulo com essas retas. Matematicamente, para três segmentos formarem um triângulo, o comprimento de cada lado deve ser menor que a soma dos outros dois. -->
+<!-- Refaça o algoritmo 25, acrescentando o recurso de mostrar que tipo de triângulo será formado:
+ - EQUILÁTERO: todos os lados iguais
+ - ISÓSCELES: dois lados iguais
+ - ESCALENO: todos os lados diferentes-->
 
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
+ <!DOCTYPE html>
+ <html lang="pt-br">
+ <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Triângulos</title>
-</head>
-<body>
+    <title>Document</title>
+ </head>
+ <body>
     <h1>
         Tipos de triângulos
     </h1>
@@ -39,10 +42,17 @@
                 alert("Os valores informados não formam um triângulo!");
                 ilado1.focus();
                 return;
+            } else if (lado_1 == lado_2 & lado_2 == lado_3) {
+                result.textContent = "Todos os lados são iguais. \nEntão temos um triangulo: Equilátero";
+                result.style.color = "#932F67"
+            } else if (lado_1 == lado_2 & lado_2 != lado_3 || lado_2 == lado_3 & lado_3 != lado_1 || lado_1 == lado_3 & lado_1 != lado_2) {
+                result.textContent = "Dois dos lados são iguais. \nEntão temos um triangulo: Isósceles";
+                result.style.color = "#D92C54"
             } else {
-                result.textContent = "É possível formar um triângulo com essas retas.";
+                result.textContent = "Todos os lados são diferentes. \nEntão temos um triangulo: Escaleno";
+                result.style.color = "#8ABB6C"
             }
         }
     </script>
-</body>
-</html>
+ </body>
+ </html>

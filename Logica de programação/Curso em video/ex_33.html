@@ -1,0 +1,58 @@
+<!-- Escreva um programa para aprovar ou não o empréstimo bancário para a compra de uma casa. O programa vai perguntar o valor da casa, o salário do comprador e em quantos anos ele vai pagar. Calcule o valor da prestação mensal, sabendo que ela não pode exceder 30% do salário ou então o empréstimo será negado.-->
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>
+        Empréstimo Bancário
+    </h1>
+    <p>
+        Valor do Imovel: <input type="number" name="valor" id="ivalor">
+    </p>
+    <p>
+        Qual o seu salário: <input type="number" name="salario" id="isalario">
+    </p>
+    <p>
+        Em quantos anos você quer quitar o valor? <input type="number" name="tempo" id="itempo">
+    </p>
+    <button onclick="calculandoPrestacao()">Verificar aprovação</button>
+    <strong>
+        <pre id="resultado"></pre>
+    </strong>
+
+    <script>
+        function calculandoPrestacao() {
+            let ivalor = document.getElementById("ivalor");
+            let isalario = document.getElementById('isalario');
+            let itempo = document.getElementById('itempo');
+            let result = document.getElementById('resultado');
+
+            let valor_imovel = Number(ivalor.value);
+            let salario = Number(isalario.value);
+            let tempo_pag = Number(itempo.value);
+
+            let valor_limite_parcela = salario * 0.3;
+            let quantidade_parcela = tempo_pag * 12;
+            let valor_mensal = valor_imovel / quantidade_parcela;
+
+            if (valor_imovel == 0 || salario == 0 || tempo_pag == 0 || isNaN(valor_imovel) || isNaN(salario) || isNaN(tempo_pag)) {
+                alert('Informe os dados pedidos corretamente!!!')
+                ivalor.focus();
+                return;
+            } else if (valor_mensal > valor_limite_parcela) {
+                result.textContent = `Infelizmente seu empréstimo foi NEGADO!`;
+                result.style.color = "red";
+            } else {
+                result.textContent = `Empréstimo APROVADO! \n${quantidade_parcela} parcelas mensais \nValor: R$${valor_mensal.toFixed(2)}`;
+                result.style.color = "#08CB00";
+            }
+
+        }
+    </script>
+</body>
+</html>

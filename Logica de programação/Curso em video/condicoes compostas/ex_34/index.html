@@ -1,0 +1,32 @@
+<!-- O Índice de Massa Corpórea (IMC) é um valor calculado baseado na altura e no peso de uma pessoa. De acordo com o valor do IMC, podemos classificar o indivíduo dentro de certas faixas.
+ - abaixo de 18.5: Abaixo do peso
+ - entre 18.5 e 25: Peso ideal
+ - entre 25 e 30: Sobrepeso
+ - entre 30 e 40: Obesidade
+ - acima de 40: Obseidade mórbida -->
+
+ <!DOCTYPE html>
+ <html lang="pt-br">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IMC</title>
+ </head>
+ <body>
+    <h1>
+        Calculando o Índice de Massa Corpórea (IMC)
+    </h1>
+    <p>
+        Altura (metros): <input type="number" name="altura" id="ialtura">
+    </p>
+    <p>
+        Peso (Kg): <input type="number" name="peso" id="ipeso">
+    </p>
+    <button onclick="calculandoMassa()">Calcular IMC</button>
+    <strong>
+        <pre id="resultado"></pre>
+    </strong>
+
+    <script src="index.js"></script>
+ </body>
+ </html>

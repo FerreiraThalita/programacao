@@ -1,0 +1,34 @@
+<!-- Crie um programa que leia duas notas de um aluno e calcule a sua média, mostrando uma mensagem no final, de acordo com a média atingida:
+ - Média até 4.9: REPROVADO
+ - Média entre 5.0 e 6.9: RECUPERAÇÃO
+ - Média 7.0 ou superior: APROVADO -->
+
+ <!DOCTYPE html>
+ <html lang="pt-br">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+ </head>
+ <body>
+    <h1>
+        Calcular Media
+    </h1>
+
+    <p>
+        Primeira nota: <input type="number" name="notas" id="inota1">
+    </p>
+
+    <p>
+        Segunda nota: <input type="number" name="notas" id="inota2">
+    </p>
+
+    <button type="submit" onclick="calculando()">Calcular Média</button>
+
+    <strong>
+        <pre id="resultado"></pre>
+    </strong>
+
+    <script src="index.js"></script>
+ </body>
+ </html>

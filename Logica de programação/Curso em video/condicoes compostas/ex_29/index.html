@@ -1,0 +1,33 @@
+<!-- Desenvolva um programa que leia o nome de um funcionário, seu salário, quantos anos ele trabalha na empresa e mostre seu novo salário, reajustado de acordo com a tabela a seguir:
+ - Até 3 anos de empresa: aumento de 3%
+ - entre 3 e 10 anos: aumento de 12.5%
+ - 10 anos ou mais: aumento de 20%-->
+
+ <!DOCTYPE html>
+ <html lang="pt-br">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+ </head>
+ <body>
+    <h1>
+      Aumento salarial
+    </h1>
+    <p>
+      Nome: <input type="text" name="nome" id="inome">
+    </p>
+    <p>
+      Salário: <input type="number" name="salario" id="isalario"> 
+    </p>
+    <p>
+      Tempo de empresa (anos): <input type="number" name="tempo" id="itempo">
+    </p>
+    <button onclick="calculandoAumento()">Calcular</button>
+    <strong>
+      <pre id="resultado"></pre>
+    </strong>
+
+    <script src="index.js"></script>
+ </body>
+ </html>

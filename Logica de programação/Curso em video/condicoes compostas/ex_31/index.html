@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Jokenpô</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Jokenpô</h1>
+    
+    <div class="placar">
+        <p>Você: <span id="pontuacao_jogador">0</span></p> 
+        <p>Robô: <span id="pontuacao_maquina">0</span></p>
+    </div>
+
+    <!-- Botões de escolha -->
+    <div class="botoes" id="botoes_escolha">
+        <img src="imagens/pedra_bt.png" alt="Uma mão fechada simbolizando uma pedra" onclick="jogar('pedra')">
+        <img src="imagens/papel_bt.png" alt="Uma mão aberta simbolizando um papel" onclick="jogar('papel')">
+        <img src="imagens/tesoura_bt.png" alt="Uma mão mostrando apenas dois dedos simpolizando uma tesoura" onclick="jogar('tesoura')">
+    </div>
+
+    <!-- Resultado das escolhas -->
+    <div class="resultado" id="area_resultado" style="display: none;">
+        <div class="escolha_jogador">
+            <div class="titulo">Você escolheu</div>
+            <img  id="img_jogador" src="" alt="Escolha do jogador">
+        </div>
+        <div class="escolha_maquina">
+            <div class="titulo">Robô escolheu</div>
+            <img  id="img_maquina" src="" alt="Escolha da maquina">
+        </div>
+    </div>
+
+    <!-- Texto do resultado -->
+    <pre id="resultadoTexto"></pre>
+
+    <!-- Botão de jogar novamente -->
+    <button id="Jogar_Novamente" onclick="resetar()">Jogar Novamente</button>
+    </div>
+
+    <script src="index.js"></script>
+</body>
+</html>

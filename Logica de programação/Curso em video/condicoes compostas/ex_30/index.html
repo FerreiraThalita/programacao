@@ -1,0 +1,32 @@
+<!-- Refaça o algoritmo 25, acrescentando o recurso de mostrar que tipo de triângulo será formado:
+ - EQUILÁTERO: todos os lados iguais
+ - ISÓSCELES: dois lados iguais
+ - ESCALENO: todos os lados diferentes-->
+
+ <!DOCTYPE html>
+ <html lang="pt-br">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+ </head>
+ <body>
+    <h1>
+        Tipos de triângulos
+    </h1>
+
+    <p>
+        Lado 1: <input type="number" name="lado1" id="ilado1">
+        <br><br>
+        Lado 2: <input type="number" name="lado2" id="ilado2">
+        <br><br>
+        Lado 3: <input type="number" name="lado3" id="ilado3">
+    </p>
+
+    <button type="submit" onclick="analisandoTri()">Analisar</button>
+
+    <pre id="resultado"></pre>
+
+    <script src="index.js"></script>
+ </body>
+ </html>

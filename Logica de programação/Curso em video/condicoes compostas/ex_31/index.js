@@ -7,6 +7,24 @@ const imagens = {
     tesoura: "imagens/tesoura.png"
 };
 
+function iniciarJogo() {
+    const input = document.getElementById('nomeJogador');
+    const nome = input.value.trim()
+
+    if (!nome) {
+        alert("Digite um nome válido!")
+        input.focus();
+        return;
+    }
+
+    // Mostra o nome no placar
+    document.getElementById('nome_exibido').textContent = nome;
+
+    // Esconde a tela de início e mostra o jogo
+    document.getElementById("tela_nome").style.display = "none";
+    document.getElementById("area_jogo").style.display = "block";
+}
+
 function jogar(escolha_jogador) {
     let result = document.getElementById('resultadoTexto');
     const opcoes = ['pedra', 'papel', 'tesoura'];
@@ -48,4 +66,23 @@ function resetar() {
       document.getElementById("area_resultado").style.display = "none";
       document.getElementById("Jogar_Novamente").style.display = "none";
       document.getElementById("resultadoTexto").textContent = "";
-    }
+}
+
+function reiniciar() {
+    pontuacao_jogador = 0;
+    pontuacao_maquina = 0;
+    document.getElementById('pontuacao_jogador').textContent = pontuacao_jogador;
+    document.getElementById('pontuacao_maquina').textContent = pontuacao_maquina;
+
+    // Limpa as imagens das escolhas
+    document.getElementById("img_jogador").src = "";
+    document.getElementById("img_maquina").src = "";
+
+    // Limpa o texto do resultado
+    document.getElementById("resultadoTexto").textContent = "";
+
+    // Volta para o estado inicial
+    document.getElementById("botoes_escolha").style.display = "flex";
+    document.getElementById("area_resultado").style.display = "none";
+    document.getElementById("Jogar_Novamente").style.display = "none";
+}

@@ -7,19 +7,27 @@
     <title>Jokenpô</title>
 </head>
 <body>
-    <div class="container">
+    <div id="tela_nome">
+        Nickname: <input id="nomeJogador" placeholder="Digite seu nome" />
+        <button onclick="iniciarJogo()" >Iniciar Jogo</button>
+    </div>
+
+    <div class="container" id="area_jogo">
         <h1>Jokenpô</h1>
     
     <div class="placar">
+        <div><p class="nome">Jogador: <span id="nome_exibido">---</span></p></div>
         <p>Você: <span id="pontuacao_jogador">0</span></p> 
         <p>Robô: <span id="pontuacao_maquina">0</span></p>
     </div>
 
     <!-- Botões de escolha -->
-    <div class="botoes" id="botoes_escolha">
-        <img src="imagens/pedra_bt.png" alt="Uma mão fechada simbolizando uma pedra" onclick="jogar('pedra')">
-        <img src="imagens/papel_bt.png" alt="Uma mão aberta simbolizando um papel" onclick="jogar('papel')">
-        <img src="imagens/tesoura_bt.png" alt="Uma mão mostrando apenas dois dedos simpolizando uma tesoura" onclick="jogar('tesoura')">
+    <div class="botoes_container">
+        <div class="botoes" id="botoes_escolha">
+            <img  class="bt_1" src="imagens/pedra_bt.png" alt="Uma mão fechada simbolizando uma pedra" onclick="jogar('pedra')">
+            <img class="bt_2" src="imagens/papel_bt.png" alt="Uma mão aberta simbolizando um papel" onclick="jogar('papel')">
+            <img class="bt_3" src="imagens/tesoura_bt.png" alt="Uma mão mostrando apenas dois dedos simpolizando uma tesoura" onclick="jogar('tesoura')">
+        </div>
     </div>
 
     <!-- Resultado das escolhas -->
@@ -39,6 +47,7 @@
 
     <!-- Botão de jogar novamente -->
     <button id="Jogar_Novamente" onclick="resetar()">Jogar Novamente</button>
+    <button id="Reiniciar" onclick="reiniciar()">Reiniciar</button>
     </div>
 
     <script src="index.js"></script>

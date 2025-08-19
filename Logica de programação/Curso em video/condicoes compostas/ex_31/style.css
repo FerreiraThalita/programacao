@@ -5,12 +5,21 @@
 }
 
 body {
-margin: 0;
   height: 100vh;
   display: flex;
   justify-content: center; /* Alinha horizontalmente */
   align-items: center;     /* Alinha verticalmente */
   background-color: #222; /* opcional */
+}
+
+#tela_nome {
+    border: 2px solid white;
+    border-radius: 10px;
+    padding: 50px;
+    background-color: #BBDCE5; /* ou outra cor */
+    text-align: center;
+    color: #0D1164;
+    font-weight: bolder;
 }
 
 .container {
@@ -19,42 +28,72 @@ margin: 0;
   padding: 20px;
   background-color: white; /* ou outra cor */
   text-align: center;
+  display: none;
 }
 
 h1 {
+    display: block;
     margin: 30px;
-    color: #222;
+    color: #0D1164;
 }
 
 .placar {
     width: 400px;
     margin: auto;
-    height: 80px;
+    height: 100px;
     background-color: #222;
     margin-bottom: 20px;
     border-radius: 5px;
     font-size: 20px;
 }
 
-.placar > p {
+.placar > p, .nome {
     display: inline-block;
-    padding: 30px;
+    padding: 12px;
     color: white;
 }
 
-.botoes {
+.botoes_container {
     display: flex;
-    justify-content: center;
-    gap: 30px;
+    justify-content: center; /* Alinha horizontalmente */
+    align-items: center;     /* Alinha verticalmente */
 }
 
  .botoes img:hover {
     transform: scale(1.1);
 }
 
+.bt_1:hover {
+    content: url(imagens/pedra_bt1.png);
+}
+
+.bt_2:hover {
+    content: url(imagens/papel_bt1.png);
+}
+
+.bt_3:hover {
+    content: url(imagens/tesoura_bt1.png); /* troca a imagem no hover */ 
+}
+
 
  #resultadoTexto {
     font-size: 24px;
     margin: 30px;
+}
+
+#Jogar_Novamente {
+    display: none;
+}
+
+button {
+    background-color: #222;
+    color: white;
+    border-radius: 5px;
+    padding: 8px;
+}
+
+button:hover {
+    background-color: #0D1164;
+    color: white;
 }
 

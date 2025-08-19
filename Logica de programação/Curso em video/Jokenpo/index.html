@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Jogos</title>
+</head>
+<body>
+    <!-- Tela Inicial -->
+    <div class="jogos">
+        <h1>Bem-vindo ao Jogo!</h1>
+
+        <p><img src="imagens/jogo_velha.jpg" alt="Jogo da Velha" onclick="escolha_velha()"></p> 
+        <p><img src="imagens/jokenpo.jpeg" alt="Jokênpo" onclick="escolha_joken()"></p>
+
+    </div>
+
+    <div class="definir_partida" style="display: none;">
+        <button id="doisJogadores" onclick="dois_jogadores()">Dois Jogadores</button>
+        <button id="contraMaquina" onclick="contra_maquina()">Contra Robô</button>
+    </div>
+
+    <!-- Escolha dos Nomes para o jogo-->
+    <div class="tela_nome" id="telaNome" style="display: none;">
+        <h2>Escolha os nomes dos jogadores</h2>
+
+        <p>Nickname (Jogador 1): <input type="text" id="inome1"></p>
+        <p class="jogador2">Nickname (Jogador 2): <input type="text" id="inome2"></p>
+
+        <p>Rodadas (Melhor de): <input type="number" name="rodadas" id="irodadas"></p>
+
+        <button onclick="iniciar_jogo()">Iniciar Jogo</button>
+    </div>
+
+    <!-- Inicio do jogo -->
+    <div class="container" style="display: none;">
+        <div class="Jokenpo" onclick="iniciarJokenpo()">
+            <h1>Jokênpo</h1>
+
+            <div class="placar">
+                <div class="placar">
+                <span id="jogador_1">Jogador 1</span> (<span id="pontuacao_jogador">0</span>) VS 
+                <span id="jogador_2">Jogador 2</span> (<span id="pontuacao_maquina">0</span>)
+                </div>
+            </div>
+            
+            <!-- Opções (pedra, papel, tesoura) -->
+            <div class="botoes" id="botoes_escolha">
+                <p><img src="imagens/pedra_bt.png" alt="" onclick="iniciarJokenpo('pedra')"></p>
+                <p><img src="imagens/papel_bt.png" alt="" onclick="iniciarJokenpo('papel')"></p>
+                <p><img src="imagens/tesoura_bt.png" alt="" onclick="iniciarJokenpo('tesoura')"></p>
+            </div>
+
+            <!-- Resultado das escolhas -->
+             <div class="resultado" id="area_resultado" style="display: none;">
+                <div class="escolha_jogador ">
+                    <img src="" alt="Escolha do Jogador" id="img_jogador">
+                </div>
+                <div class="escolha_maquina">
+                    <img src="" alt="Escolha da maquina" id="img_maquina">
+                </div>
+             </div>
+
+            <!-- Texto do resultado -->
+            <pre id="resultadoTexto"></pre>
+        </div>
+
+        <div class="jogo_velha" onclick="iniciarJogoVelha()">
+            <h1>
+                Jogo da Velha
+            </h1>
+
+            <div class="placar">
+                <span id="jogador1">Jogador 1</span> VS <span id="jogador2">Jogador 2</span>
+            </div>
+
+            <div class="tabuleiro" id="tabuleiro">
+
+                <!-- Criando 9 células -->
+                <div class="celula" onclick="fazerJogada(0)"></div>
+                <div class="celula" onclick="fazerJogada(1)"></div>
+                <div class="celula" onclick="fazerJogada(2)"></div>
+                <div class="celula" onclick="fazerJogada(3)"></div>
+                <div class="celula" onclick="fazerJogada(4)"></div>
+                <div class="celula" onclick="fazerJogada(5)"></div>
+                <div class="celula" onclick="fazerJogada(6)"></div>
+                <div class="celula" onclick="fazerJogada(7)"></div>
+                <div class="celula" onclick="fazerJogada(8)"></div>
+
+                <pre id="mensagemVelha"></pre>
+            </div>
+        </div>
+
+        <!-- Botões (Reiniciar, Jogar novamente, Trocar Jogador)-->
+        <button id="Jogar_Novamente" onclick="reiniciarJokenpo()">Jogar Novamente</button>
+        <button onclick="reiniciarJogo()">Reiniciar</button>
+        <button onclick="trocarJogadores()">Trocar Jogadores</button>
+
+    </div>
+
+    <script src="index.js"></script>
+</body>
+</html>

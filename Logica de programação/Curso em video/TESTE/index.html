@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Jogos</title>
+</head>
+<body>
+    <div class="container">
+        <div class="tela_inicial">
+            <h1>
+                Bem-Vindo ao Jogo!
+            </h1>
+            <p> <img src="imagens/jogo_velha.jpg" alt="Jogo da velha" onclick="escolha_velha()"> </p>
+            <p> <img src="imagens/jokenpo.jpeg" alt="Jokênpo (pedra, papel, tesoura)" onclick="escolha_joken()"> </p>
+        </div>
+
+        <div class="definir_partida" style="display: none;">
+            <div class="modo_jogo">
+                <p> Dois Jogadores </p>
+                <img src="imagens/jogadores.jpg" alt="Silueta de duas pessoas" onclick="jogadores()" class="bt1"> 
+            </div>
+            <div class="modo_jogo">
+                <p> Contra o Robô </p>
+                <img src="imagens/robo.jpg" alt="Silueta de 1 pessoa e 1 robô" onclick="contra_robo()" class="bt2"> 
+            </div>
+        </div>
+
+        <div class="nomes" style="display: none;">
+            <h2 id="titulo"> Escolha os nomes dos jogadores </h2>
+
+            <p id="jogador_1">Nickname (Jogador 1): <input type="text" name="jogador1" id="nome1" ></p>
+
+            <p id="jogador_2">Nickname (Jogador 2): <input type="text" name="jogador2" id="nome2" ></p>
+
+            <p id="iRodadas">Rodadas (Melhor de): <input type="number" name="rodadas" ></p>
+
+            <button onclick="iniciarJogo()">Iniciar Jogo</button>
+            <button id="voltar" onclick="voltar()">Voltar</button>
+        </div>
+
+        <div class="jogos">
+            <div class="jokenpo" style="display: none;">
+                <h1>Jokênpo</h1>
+                <div class="placar">
+                    <span> Jogador 1 : </span> <span> 0 </span>  vs
+                    <span> Jogador 2 : </span> <span> 0 </span>
+                </div>
+                <div class="botoes_joken">
+                    <img src="imagens/pedra_bt.png" alt="pedra">
+                    <img src="imagens/papel_bt.png" alt="papel">
+                    <img src="imagens/tesoura_bt.png" alt="tesoura">
+                </div>
+            </div>
+        </div>
+
+        <div class="botões_geral" style="display: none;">
+            <button>Reiniciar</button>
+            <button>Trocar Jogadores</button>
+            <button>Jogar Novamente</button>
+        </div>
+    </div>
+
+    <script src="index.js"></script>
+</body>
+</html>

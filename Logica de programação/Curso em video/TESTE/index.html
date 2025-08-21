@@ -8,6 +8,8 @@
 </head>
 <body>
     <div class="container">
+
+        <!-- Tela Inicial -->
         <div class="tela_inicial">
             <h1>
                 Bem-Vindo ao Jogo!
@@ -16,6 +18,7 @@
             <p> <img src="imagens/jokenpo.jpeg" alt="Jokênpo (pedra, papel, tesoura)" onclick="escolha_joken()"> </p>
         </div>
 
+        <!-- Definição da partida -->
         <div class="definir_partida" style="display: none;">
             <div class="modo_jogo">
                 <p> Dois Jogadores </p>
@@ -27,6 +30,7 @@
             </div>
         </div>
 
+        <!-- Escolha dos nomes -->
         <div class="nomes" style="display: none;">
             <h2 id="titulo"> Escolha os nomes dos jogadores </h2>
 
@@ -40,26 +44,75 @@
             <button id="voltar" onclick="voltar()">Voltar</button>
         </div>
 
+        <!--Campo dos Jogos -->
         <div class="jogos">
             <div class="jokenpo" style="display: none;">
                 <h1>Jokênpo</h1>
-                <div class="placar">
-                    <span> Jogador 1 : </span> <span> 0 </span>  vs
-                    <span> Jogador 2 : </span> <span> 0 </span>
+
+                <div class="placar_joken">
+                    <p id="infoRodada"></p>
+                    <span class="jog1"> Jogador 1 : </span> <span class="pontuacao_jogador"> 0 </span>  vs
+                    <span class="jog2"> Jogador 2 : </span> <span class="pontuacao_maquina"> 0 </span>
                 </div>
+
+                <!-- Botões de escolha (pedra, papel, tesoura) -->
                 <div class="botoes_joken">
-                    <img src="imagens/pedra_bt.png" alt="pedra">
-                    <img src="imagens/papel_bt.png" alt="papel">
-                    <img src="imagens/tesoura_bt.png" alt="tesoura">
+                    <img onclick="jogar('pedra')" src="imagens/pedra_bt.png" alt="pedra">
+                    <img onclick="jogar('papel')" src="imagens/papel_bt.png" alt="papel">
+                    <img onclick="jogar('tesoura')" src="imagens/tesoura_bt.png" alt="tesoura">
+                </div>
+
+                <!-- Resultado das escolhas -->
+                <div class="areaResultado" style="display: none;"> 
+                    <div class="resultado_escolha">
+                        <p>Sua Escolha:</p>
+                        <img src="" alt="Escolha do Jogador" id="img_jogador">
+                    </div>
+                    <div class="resultado_escolha">
+                        <p>Escolha Robô:</p>
+                        <img src="" alt="Escolha da maquina" id="img_maquina">
+                    </div>
+                </div>
+
+                <!-- Texto do resultado -->
+                <pre id="resultadoRodada"></pre>
+            </div>
+
+            <div class="jogo_velha" style="display: none;">
+                <h2>Jogo da velha</h2>
+
+                <div class="placar">
+                    <span class="jog1"> Jogador 1 : </span> <span class="pontuacao_jogador"> 0 </span>  vs
+                    <span class="jog2"> Jogador 2 : </span> <span class="pontuacao_maquina"> 0 </span>
+                </div>
+
+                <div class="tabuleiro">
+                    <div class="celula" data-pos="0"></div>
+                    <div class="celula" data-pos="1"></div>
+                    <div class="celula" data-pos="2"></div>
+                    <div class="celula" data-pos="3"></div>
+                    <div class="celula" data-pos="4"></div>
+                    <div class="celula" data-pos="5"></div>
+                    <div class="celula" data-pos="6"></div>
+                    <div class="celula" data-pos="7"></div>
+                    <div class="celula" data-pos="8"></div>
+                </div>
+
+                <div class="controle_velha">
+                    <p id="mensagem_velha">Sua vez!</p>
+                    <button onclick="reiniciarVelha()">Reiniciar Partida</button>
                 </div>
             </div>
         </div>
 
-        <div class="botões_geral" style="display: none;">
-            <button>Reiniciar</button>
-            <button>Trocar Jogadores</button>
-            <button>Jogar Novamente</button>
+        <div class="tela_final" style="display: none;">
+            <h1 id="resultadoFinal"></h1>
         </div>
+
+        <button style="display: none;" class="telaInicial" onclick="reiniciarJoken()">Tela Inicial</button>
+        <button style="display: none;" class="trocarJogadores" onclick="trocar_Jogadores()">Trocar Jogadores</button>
+        <button style="display: none;" class="jogarNov" onclick="jogar_Nov()">Jogar Novamente</button>
+        <button style="display: none;" class="Continuar" onclick="continuarRodada()" >Continuar</button>
     </div>
 
     <script src="index.js"></script>

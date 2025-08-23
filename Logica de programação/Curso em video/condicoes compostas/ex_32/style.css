@@ -1,0 +1,114 @@
+
+* {
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #3A0519;
+}
+
+.container {
+    padding: 30px;
+    width: 500px;
+    height: 450px;
+    border-radius: 10px;
+    background-color: white;
+    text-align: center;
+}
+
+.tela_inicial {
+    padding: 60px;
+}
+
+.tela_inicial > img {
+    padding: 15px;
+}
+
+.iniciar {
+    display: block;
+    margin: auto;
+}
+
+.jogo > h1 {
+    margin-top: 30px;
+}
+
+h1, p{
+    padding: 10px;
+    font-weight: bolder;
+}
+
+h2 {
+    padding: 10px;
+    margin-top: 160px;
+}
+
+span {
+    font-weight: bolder;
+}
+
+.vs {
+    display: inline-block;
+    padding-top: 15px;
+}
+
+.escolha_num {
+    display: grid;
+    justify-items: center;
+    grid-template-columns: repeat(3, 1fr);
+    padding: 30px;    
+}
+
+button {
+    margin: 5px;
+    padding: 8px;
+    color: white;
+    font-weight: bold;
+    border-radius: 5px;
+    border: 2px solid #670D2F;
+    background-color: #670D2F;
+}
+
+button:hover {
+    color: #670D2F;
+    border: 2px solid #670D2F;
+    background-color: white;
+    transform: scale(1.1);
+}
+
+.bt1:hover {
+    transform: scale(1.1);
+    content: url(imagens/num_1.png);
+}
+
+.bt2:hover {
+    transform: scale(1.1);
+    content: url(imagens/num_2.png);
+}
+
+.bt3:hover {
+    transform: scale(1.1);
+    content: url(imagens/num_3.png);
+}
+
+.bt4:hover {
+    transform: scale(1.1);
+    content: url(imagens/num_4.png);
+}
+
+.bt5:hover {
+    transform: scale(1.1);
+    content: url(imagens/num_5.png);
+}
+
+.bt6:hover {
+    transform: scale(1.1);
+    content: url(imagens/num_6.png);
+}

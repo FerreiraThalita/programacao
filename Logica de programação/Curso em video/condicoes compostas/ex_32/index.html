@@ -3,10 +3,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <title>Jogo</title>
 </head>
 <body>
-    
+    <div class="container">
+        <div class="tela_inicial">
+            <h1>
+                Bem-vindo ao Jogo!
+            </h1>
+            <img src="imagens/game.jpg" alt="controle de video game">
+            <button class="iniciar" onclick="iniciar()">Iniciar</button>
+        </div>
+
+        <div class="nome" style="display: none;">
+            <h2>Escolha o nome do jogador:</h2>
+            <p>
+                Nickname : <input type="text" id="nick" placeholder="Nome do Jogador">
+            </p>
+            <button onclick="jogar()">Jogar</button>
+        </div>
+
+        <div class="jogo" style="display: none;">
+            <h1>
+                Adivinhando o Número
+            </h1>
+            
+            <p class="infoRodada"></p>
+            <hr>
+            <div class="placar">
+                <span class="jog1">Jogador 1 </span> <span class="pont_jog">- 0</span>
+                <p class="vs">Vs</p>
+                <span class="robo1">Robô - </span> <span class="pont_robo">0</span>
+            </div>
+            <div class="escolha_num">
+                <img src="imagens/num_1bt.png" alt="número 1" class="bt1">
+                <img src="imagens/num_2bt.png" alt="número 2" class="bt2">
+                <img src="imagens/num_3bt.png" alt="número 3" class="bt3">
+                <img src="imagens/num_4bt.png" alt="número 4" class="bt4">
+                <img src="imagens/num_5bt.png" alt="número 5" class="bt5">
+                <img src="imagens/num_6bt.png" alt="número 6" class="bt6">
+            </div>
+        </div>
+
+        <div class="tela_final" style="display: none;">
+            <div>
+                <p>Sua escolha:</p>
+                <img class="img_jogador" src="" alt="escolha do jogador">
+            </div>
+            <div>
+                <p>Escolha Robô:</p>
+                <img class="img_robo" src="" alt="escolha do robo">
+            </div>
+            <pre class="resultadoText"></pre>
+        </div>
+
+        <button class="jogNov" style="display: none;">Jogar Novamente</button>
+        <button class="continuar" style="display: none;">Continuar</button>
+    </div>
+
+    <script src="index.js"></script>
 </body>
 </html>
 

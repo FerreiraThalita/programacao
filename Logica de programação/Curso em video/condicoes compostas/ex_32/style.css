@@ -5,6 +5,13 @@
     font-family: 'Courier New', Courier, monospace;
 }
 
+@media (max-width: 550px) {
+    .container {
+        width: 90vw;
+        height: auto;
+    }
+}
+
 body {
     width: 100vw;
     height: 100vh;
@@ -21,33 +28,30 @@ body {
     border-radius: 10px;
     background-color: white;
     text-align: center;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
-.tela_inicial {
-    padding: 60px;
+.tela_inicial,
+.inic_Jog {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
 }
 
 .tela_inicial > img {
     padding: 15px;
 }
 
-.iniciar {
-    display: block;
-    margin: auto;
-}
-
-.jogo > h1 {
-    margin-top: 30px;
-}
-
-h1, p{
-    padding: 10px;
+h1, p, h2{
+    padding: 15px;
     font-weight: bolder;
-}
-
-h2 {
-    padding: 10px;
-    margin-top: 160px;
 }
 
 span {
@@ -56,7 +60,6 @@ span {
 
 .vs {
     display: inline-block;
-    padding-top: 15px;
 }
 
 .escolha_num {
@@ -66,14 +69,49 @@ span {
     padding: 30px;    
 }
 
+.area_resultado {
+    display: flex;
+    justify-content: center;
+    gap: 40px; /* Espaçamento entre as duas divs internas */
+    margin-bottom: 10px; /* reduz o espaço entre imagens e texto */
+}
+
+.result_escolha {
+    display: flex;
+    flex-direction: column;
+    align-items: center;  /* Centraliza os itens (p e img) dentro de cada div */
+}
+
+.tela_final {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 15px; /* espaço controlado entre blocos */
+}
+
+pre {
+    font-size: 2em;
+    font-weight: bold;
+    padding: 15px;
+}
+
 button {
     margin: 5px;
-    padding: 8px;
+    padding: 10px;
     color: white;
     font-weight: bold;
     border-radius: 5px;
     border: 2px solid #670D2F;
     background-color: #670D2F;
+}
+
+.botoes {
+    display: flex;
+    justify-content: center;
+    gap: 10px; /* Espaçamento entre os botões */
+    flex-wrap: wrap; /* Para não quebrar o layout em telas menores */
+    margin-top: 20px;
 }
 
 button:hover {

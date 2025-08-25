@@ -21,10 +21,13 @@
             <p>
                 Nickname : <input type="text" id="nick" placeholder="Nome do Jogador">
             </p>
+            <p>
+                Pontuação (Melhor de): <input type="number" id="pontuacao" placeholder="Exemplo: Melhor de 3">
+            </p>
             <button onclick="jogar()">Jogar</button>
         </div>
 
-        <div class="jogo" style="display: none;">
+        <div class="inic_Jog" style="display: none;">
             <h1>
                 Adivinhando o Número
             </h1>
@@ -34,32 +37,40 @@
             <div class="placar">
                 <span class="jog1">Jogador 1 </span> <span class="pont_jog">- 0</span>
                 <p class="vs">Vs</p>
-                <span class="robo1">Robô - </span> <span class="pont_robo">0</span>
+                <span class="robo">Robô - </span> <span class="pont_robo">0</span>
             </div>
             <div class="escolha_num">
-                <img src="imagens/num_1bt.png" alt="número 1" class="bt1">
-                <img src="imagens/num_2bt.png" alt="número 2" class="bt2">
-                <img src="imagens/num_3bt.png" alt="número 3" class="bt3">
-                <img src="imagens/num_4bt.png" alt="número 4" class="bt4">
-                <img src="imagens/num_5bt.png" alt="número 5" class="bt5">
-                <img src="imagens/num_6bt.png" alt="número 6" class="bt6">
+                <img src="imagens/num_1bt.png" alt="número 1" class="bt1" onclick="iniciarJog('num1')">
+                <img src="imagens/num_2bt.png" alt="número 2" class="bt2" onclick="iniciarJog('num2')">
+                <img src="imagens/num_3bt.png" alt="número 3" class="bt3" onclick="iniciarJog('num3')">
+                <img src="imagens/num_4bt.png" alt="número 4" class="bt4" onclick="iniciarJog('num4')">
+                <img src="imagens/num_5bt.png" alt="número 5" class="bt5" onclick="iniciarJog('num5')">
+                <img src="imagens/num_6bt.png" alt="número 6" class="bt6" onclick="iniciarJog('num6')">
+            </div>
+        </div>
+
+        <div class="area_resultado" style="display: none;">
+            <div class="result_escolha">
+                <p>Sua escolha:</p>
+                <img class="img_jogador" src="" alt="escolha do jogador">
+                </div>
+            <div class="result_escolha">
+                <p>Escolha Robô:</p>
+                <img class="img_robo" src="" alt="escolha do robo">
             </div>
         </div>
 
         <div class="tela_final" style="display: none;">
-            <div>
-                <p>Sua escolha:</p>
-                <img class="img_jogador" src="" alt="escolha do jogador">
-            </div>
-            <div>
-                <p>Escolha Robô:</p>
-                <img class="img_robo" src="" alt="escolha do robo">
-            </div>
-            <pre class="resultadoText"></pre>
+            <pre class="resultFinal"></pre>
         </div>
+        
+        <pre class="resultadoText"></pre>
 
-        <button class="jogNov" style="display: none;">Jogar Novamente</button>
-        <button class="continuar" style="display: none;">Continuar</button>
+        <div class="botoes">
+            <button class="continuar" style="display: none;" onclick="continuar()">Continuar</button>
+            <button class="jogNov" style="display: none;" onclick="jogarNov()">Jogar Novamente</button>
+            <button class="reiniciar" style="display: none;" onclick="reiniciar()">Reinicar</button>
+        </div>
     </div>
 
     <script src="index.js"></script>

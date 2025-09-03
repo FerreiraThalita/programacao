@@ -1,0 +1,215 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Honk&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+
+
+* {
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #7A7A73;
+}
+
+.container {
+    padding: 30px;
+    width: 500px;
+    height: 450px;
+    border-radius: 10px;
+    background-color: #DDDAD0   ;
+    text-align: center;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.inicio {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+
+h1 {
+    font-family: 'Honk';
+    padding: 20px;
+    font-size: 2.8em;
+}
+
+.inicio > img {
+    margin: 15px;
+    border: 2px solid #7A7A73;
+    border-radius: 10px;
+}
+
+h2 {
+    padding: 15px;
+}
+
+.instruções > h3 {
+    padding: 15px;
+    color: red;
+    font-size: 1.4em;
+}
+
+p {
+    padding: 15px;
+    font-size: 1.1em;
+}
+
+.placar > p {
+    display: inline-block;
+    font-weight: bold;
+}
+
+.escolhas {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+}
+
+.titulo {
+    font-family: 'Honk';
+    font-size: 2.1em;
+}
+
+img {
+    border: 2px solid #7A7A73;
+    border-radius: 50px;
+}
+
+.resultado {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    padding: 10px;
+}
+
+.resultado_imgs {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.resultadoText {
+    padding: 15px;
+}
+
+pre {
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+.msg_final {
+    font-family: "Press Start 2P", system-ui;
+    font-size: 2.2em;
+    margin: 10px;
+}
+
+.text_final {
+    padding: 15px;
+    margin: 5px;
+}
+
+.num_1:hover {
+    transform: scale(1.1);
+    content: url(imagens/num_1.png);
+    border: none;
+}
+
+.num_2:hover {
+    transform: scale(1.1);
+    content: url(imagens/num_2.png);
+    border: none;
+}
+
+.num_3:hover {
+    transform: scale(1.1);
+    content: url(imagens/num_3.png);
+    border: none;
+}
+
+.num_4:hover {
+    transform: scale(1.1);
+    content: url(imagens/num_4.png);
+    border: none;
+}
+
+.num_5:hover {
+    transform: scale(1.1);
+    content: url(imagens/num_5.png);
+    border: none;
+}
+
+.num_6:hover {
+    transform: scale(1.1);
+    content: url(imagens/num_6.png);
+    border: none;
+}
+
+.num_7:hover {
+    transform: scale(1.1);
+    content: url(imagens/num_7.png);
+    border: none;
+}
+
+.num_8:hover {
+    transform: scale(1.1);
+    content: url(imagens/num_8.png);
+    border: none;
+}
+
+.num_9:hover {
+    transform: scale(1.1);
+    content: url(imagens/num_9.png);
+    border: none;
+}
+
+.num_10:hover {
+    transform: scale(1.1);
+    content: url(imagens/num_10.png);
+    border: none;
+}
+
+.num_11:hover {
+    transform: scale(1.1);
+    content: url(imagens/num_11.png);
+    border: none;
+}
+
+.num_12:hover {
+    transform: scale(1.1);
+    content: url(imagens/num_12.png);
+    border: none;
+}
+
+.botões {
+    display: inline-block;
+    margin: 10px;
+}
+
+button {
+    margin: 10px;
+    padding: 10px;
+    background-color: #FFFA8D;
+    border: 2px solid #FFD700;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+button:hover {
+    transform: scale(1.1);
+    font-weight: bold;
+}

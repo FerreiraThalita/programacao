@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Adivinhando</title>
+</head>
+<body>
+    <div class="container">
+        <div class="inicio">
+            <h1>Bem-vindo ao Jogo!</h1>
+            <img src="imagens/game.jpg" alt="controle de video game">
+            <button onclick="iniciar()">Iniciar</button>
+        </div>
+
+        <div class="nome" style="display: none;">
+            <h2>Escolha seu nome:</h2>
+            <p>
+                Nickname: <input type="text" id="inome">
+            </p>
+            <button onclick="preparar()">Preparar!</button>
+        </div>
+
+        <div class="instruções" style="display: none;">
+            <h3>&#x26A0; Atenção!</h3>
+            <p>
+                Este é um jogo de adivinhação: tente descobrir qual número o robô escolheu!
+            </p>
+            <p>
+                Você e o robô vão escolher um número de 1 a 12. Se escolherem o mesmo número... parabéns, você venceu!
+            </p>
+            <p>
+                <strong>⚠️ Mas cuidado:</strong> você só tem <strong>4 chances</strong> para acertar. Boa sorte!
+            </p>
+            <button onclick="jogar()">Jogar</button>
+        </div>
+
+        <div class="jogo" style="display: none;">
+            <h3 class="titulo">Adivinhando o número</h3>
+
+            <p class="rodada"></p>
+            <hr>
+            <div class="placar">
+                <span class="jog1">Jogador 1 </span> <span class="pont_jog">- 0</span>
+                <p class="vs">Vs</p>
+                <span class="robo">Robô - </span> <span class="pont_rob">0</span>
+            </div>
+
+            <div class="escolhas">
+                <img src="imagens/num_1bt.png" alt="número 1" class="num_1" onclick="iniciarJogo('num1')">
+                <img src="imagens/num_2bt.png" alt="número 2" class="num_2" onclick="iniciarJogo('num2')">
+                <img src="imagens/num_3bt.png" alt="número 3" class="num_3" onclick="iniciarJogo('num3')">
+                <img src="imagens/num_4bt.png" alt="número 4" class="num_4" onclick="iniciarJogo('num4')">
+                <img src="imagens/num_5bt.png" alt="número 5" class="num_5" onclick="iniciarJogo('num5')">
+                <img src="imagens/num_6bt.png" alt="número 6" class="num_6" onclick="iniciarJogo('num6')">
+                <img src="imagens/num_7bt.png" alt="número 7" class="num_7" onclick="iniciarJogo('num7')">
+                <img src="imagens/num_8bt.png" alt="número 8" class="num_8" onclick="iniciarJogo('num8')">
+                <img src="imagens/num_9bt.png" alt="número 9" class="num_9" onclick="iniciarJogo('num9')">
+                <img src="imagens/num_10bt.png" alt="número 10" class="num_10" onclick="iniciarJogo('num10')">
+                <img src="imagens/num_11bt.png" alt="número 11" class="num_11" onclick="iniciarJogo('num11')">
+                <img src="imagens/num_12bt.png" alt="número 12" class="num_12" onclick="iniciarJogo('num12')">
+            </div>
+
+            <div class="resultado">
+                <div class="resultado_imgs">
+                    <p>Sua escolha:</p>
+                    <img class="resultJogador" src="" alt="Sua escolha">
+                </div>
+
+                <div class="resultado_imgs">
+                    <p>Escolha do Robô:</p>
+                    <img class="resultRobo" src="" alt="Escolha do Robô">
+                </div>
+            </div>
+
+            <pre class="resultadoText"></pre>
+        </div>
+
+        <div id="tela-final" style="display: none;">
+            <h2 class="msg_final"></h2>
+            <p class="text_final"></p>
+            
+        </div>
+
+        <button onclick="continuar()" class="continuar" style="display: none;">Continuar</button>
+        <div class="botões" style="display: none;">
+            <button onclick="reiniciar()" class="reiniciar" style="display: none;">Reiniciar</button>
+            <button onclick="jogarNov()" class="jogarNov" style="display: none;">Jogar Novamente</button>
+        </div>
+    </div>
+
+    <script src="index.js"></script>
+</body>
+</html>
+
+<!-- Vamos melhorar o jogo que fizemos no exercício 32. A partir de agora, o computador vai sortear um número entre 1 e 10 e o jogador vai ter 4 tentativas para tentar acertar. -->
